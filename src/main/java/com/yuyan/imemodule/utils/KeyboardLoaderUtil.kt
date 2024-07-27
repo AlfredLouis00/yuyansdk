@@ -175,6 +175,28 @@ class KeyboardLoaderUtil private constructor() {
                 keyBeans = lastRows(numberLine)
                 rows.add(keyBeans)
             }
+            0x7000 -> {  // 7000  AZERTY全键法语式
+                var keyBeans = mutableListOf<SoftKey>()
+                var azertyKeys = createQwertyKeys(arrayOf(29, 75, 33, 46, 48, 53, 49, 37, 43, 44))
+                keyBeans.addAll(azertyKeys)
+                rows.add(keyBeans)
+                keyBeans = LinkedList()
+                azertyKeys = createQwertyKeys(arrayOf(45, 47, 32, 34, 35, 36, 38, 39, 40, 41))
+                keyBeans.addAll(azertyKeys)
+                rows.add(keyBeans)
+                keyBeans = LinkedList()
+                azertyKeys = createQwertyKeys(arrayOf(51, 54, 52, 31, 50, 30, 42, KeyEvent.KEYCODE_DEL))
+                azertyKeys.first().apply {
+                    widthF = 0.199f
+                }
+                azertyKeys.last().apply {
+                    widthF = 0.199f
+                }
+                keyBeans.addAll(azertyKeys)
+                rows.add(keyBeans)
+                keyBeans = lastRows(numberLine)
+                rows.add(keyBeans)
+            }
         }
         softKeyboard = getSoftKeyboard(skbValue, rows, numberLine)
         mSoftKeyboardMap[skbValue] = softKeyboard
