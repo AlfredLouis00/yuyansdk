@@ -1,0 +1,466 @@
+__build_info:
+  rime_version: 1.11.2
+  timestamps:
+    default: 1718118791
+    default.custom: 1719623651
+    key_bindings: 1718118792
+    key_bindings.custom: 0
+    punctuation: 1718118792
+    punctuation.custom: 0
+    sautungva_beta.custom: 0
+    sautungva_beta.schema: 1719636635
+cyrillic:
+  closing_tips: "〔邵東話〕"
+  dictionary: cyrillic
+  enable_user_dict: false
+  prefix: r
+  spelling_hints: 10
+  suffix: "'"
+  tag: cyrillic
+  tips: "〔西方字母〕"
+engine:
+  filters:
+    - simplifier
+    - "simplifier@trad_tw"
+    - "simplifier@trad_hk"
+    - uniquifier
+  processors:
+    - ascii_composer
+    - key_binder
+    - recognizer
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - "affix_segmentor@kana"
+    - "affix_segmentor@hangeul"
+    - "affix_segmentor@cyrillic"
+    - "affix_segmentor@hannom"
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+    - "table_translator@kana"
+    - "table_translator@hangeul"
+    - "table_translator@cyrillic"
+    - "table_translator@hannom"
+    - reverse_lookup_translator
+hangeul:
+  closing_tips: "〔邵東話〕"
+  dictionary: oldhangeul
+  enable_user_dict: false
+  preedit_format:
+    - "xlit|qwertyuiopasdfghjklzxcvbnmQWERTYADFGZXCV|ㅂㅈㄷㄱㅅㅿㅛㅕㅑㆍㅁㄴㅇㄹㅎㅗㅓㅏㅣㅋㅌㅊㅍㅠㅜㅡᄫᅎᅐДᄼᄾㅱㆁᄛㆆдᅔᅕᅗ|"
+  prefix: w
+  spelling_hints: 10
+  suffix: "'"
+  tag: hangeul
+  tips: "〔諺文〕"
+hannom:
+  closing_tips: "〔邵東話〕"
+  comment_format:
+    - "xform/^(.*)$/〔$1〕"
+    - "xform/((ⓗ|ⓥ|◎).+)〕/〕$1/"
+    - "xform/úy/uý/"
+    - "xform/ùy/uỳ/"
+    - "xform/ủy/uỷ/"
+    - "xform/ụy/uỵ/"
+    - "xform/ũy/uỹ/"
+    - "xform/(qu|k|l|h|v|m|t|s)y/$1i/"
+    - "xform/(qu|k|l|h|v|m|t|s)ỳ/$1ì/"
+    - "xform/(qu|k|l|h|v|m|t|s)ý/$1í/"
+    - "xform/(qu|k|l|h|v|m|t|s)ỵ/$1ị/"
+    - "xform/(qu|k|l|h|v|m|t|s)ỹ/$1ĩ/"
+    - "xform/(qu|k|l|h|v|m|t|s)ỷ/$1ỉ/"
+  dictionary: newhannom
+  enable_user_dict: false
+  preedit_format:
+    - "xform/(ⓗ|ⓥ|◎).+$//"
+    - "xform ([aeiouâăôê])(ng|nh|ch)([sfjxr]) $1$3$2"
+    - "xform ([aeiouâăôê])([iunptckmy])([sfjxr]) $1$3$2"
+    - "xform ([ae])([ou])([sfjxr]) $1$3$2"
+    - "xform (aw|ow|uw|w)([iunptckmy])([sfjxr]) $1$3$2"
+    - "xform (aw|ow|uw|w)(ng|nh|ch)([sfjxr]) $1$3$2"
+    - "xform (u|uw|i|w)(a)([sfjxr])$ $1$3$2"
+    - "xform (gi)([sfjxr])(a) $1$3$2"
+    - "xform (u)([sfjxr])(y) $1$3$2"
+    - "xform (huy)(nh)([sfjxr]) $1$3$2"
+    - "xform qu([sfjxr])i qui$1"
+    - "xform z "
+    - "xform dd đ"
+    - "xform aa â"
+    - "xform âs ấ"
+    - "xform âf ầ"
+    - "xform âj ậ"
+    - "xform âx ẫ"
+    - "xform âr ẩ"
+    - "xform aw ă"
+    - "xform ăs ắ"
+    - "xform ăf ằ"
+    - "xform ăj ặ"
+    - "xform ăx ẵ"
+    - "xform ăr ẳ"
+    - "xform oo ô"
+    - "xform ôs ố"
+    - "xform ôf ồ"
+    - "xform ôj ộ"
+    - "xform ôx ỗ"
+    - "xform ôr ổ"
+    - "xform ee ê"
+    - "xform ês ế"
+    - "xform êf ề"
+    - "xform êj ệ"
+    - "xform êx ễ"
+    - "xform êr ể"
+    - "xform ow ơ"
+    - "xform ơs ớ"
+    - "xform ơf ờ"
+    - "xform ơj ợ"
+    - "xform ơx ỡ"
+    - "xform ơr ở"
+    - "xform uw ư"
+    - "xform w ư"
+    - "xform ưs ứ"
+    - "xform ưf ừ"
+    - "xform ưj ự"
+    - "xform ưx ữ"
+    - "xform ưr ử"
+    - "xform as á"
+    - "xform af à"
+    - "xform aj ạ"
+    - "xform ax ã"
+    - "xform ar ả"
+    - "xform is í"
+    - "xform if ì"
+    - "xform ij ị"
+    - "xform ix ĩ"
+    - "xform ir ỉ"
+    - "xform us ú"
+    - "xform uf ù"
+    - "xform uj ụ"
+    - "xform ux ũ"
+    - "xform ur ủ"
+    - "xform es é"
+    - "xform ef è"
+    - "xform ej ẹ"
+    - "xform ex ẽ"
+    - "xform er ẻ"
+    - "xform os ó"
+    - "xform of ò"
+    - "xform oj ọ"
+    - "xform ox õ"
+    - "xform or ỏ"
+    - "xform ys ý"
+    - "xform yf ỳ"
+    - "xform yj ỵ"
+    - "xform yx ỹ"
+    - "xform yr ỷ"
+    - "xform f ph"
+  prefix: q
+  spelling_hints: 10
+  suffix: "'"
+  tag: hannom
+  tips: "〔漢喃〕"
+kana:
+  closing_tips: "〔邵東話〕"
+  dictionary: japanese
+  prefix: j
+  spelling_hints: 10
+  suffix: "'"
+  tag: kana
+  tips: "〔假名〕"
+key_binder:
+  bindings:
+    - {accept: "Control+p", send: Up, when: composing}
+    - {accept: "Control+n", send: Down, when: composing}
+    - {accept: "Control+b", send: Left, when: composing}
+    - {accept: "Control+f", send: Right, when: composing}
+    - {accept: "Control+a", send: Home, when: composing}
+    - {accept: "Control+e", send: End, when: composing}
+    - {accept: "Control+d", send: Delete, when: composing}
+    - {accept: "Control+k", send: "Shift+Delete", when: composing}
+    - {accept: "Control+h", send: BackSpace, when: composing}
+    - {accept: "Control+g", send: Escape, when: composing}
+    - {accept: "Control+bracketleft", send: Escape, when: composing}
+    - {accept: "Control+y", send: Page_Up, when: composing}
+    - {accept: "Alt+v", send: Page_Up, when: composing}
+    - {accept: "Control+v", send: Page_Down, when: composing}
+    - {accept: ISO_Left_Tab, send: "Shift+Left", when: composing}
+    - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
+    - {accept: Tab, send: "Shift+Right", when: composing}
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: comma, send: Page_Up, when: paging}
+    - {accept: period, send: Page_Down, when: has_menu}
+    - {accept: "Control+Shift+1", select: .next, when: always}
+    - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
+    - {accept: "Control+Shift+3", toggle: full_shape, when: always}
+    - {accept: "Control+Shift+4", toggle: simplification, when: always}
+    - {accept: "Control+Shift+5", toggle: extended_charset, when: always}
+    - {accept: "Control+Shift+exclam", select: .next, when: always}
+    - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
+    - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
+    - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
+    - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
+  import_preset: default
+menu:
+  alternative_select_labels:
+    - "甲"
+    - "乙"
+    - "丙"
+    - "丁"
+    - "戊"
+    - "己"
+    - "庚"
+    - "辛"
+    - "壬"
+    - "癸"
+  page_size: 9
+punctuator:
+  full_shape:
+    " ": {commit: "　"}
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": ["＃", "⌘"]
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["％", "°", "℃"]
+    "&": "＆"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["＊", "·", "・", "×", "※", "❂"]
+    "+": "＋"
+    ",": {commit: "，"}
+    "-": "－"
+    .: {commit: "。"}
+    "/": ["／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "＝"
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": ["＠", "☯"]
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "｀"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": "～"
+  half_shape:
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": "#"
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["%", "％", "°", "℃"]
+    "&": "&"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["*", "＊", "·", "・", "×", "※", "❂"]
+    "+": "+"
+    ",": {commit: "，"}
+    "-": "-"
+    .: {commit: "。"}
+    "/": ["、", "/", "／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "="
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": "@"
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "\\", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "`"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "|", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": ["~", "～"]
+  import_preset: default
+recognizer:
+  import_preset: default
+  patterns:
+    cyrillic: "^r[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]*'?$"
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    hangeul: "^w[abcdefghijklmnopqrestuvwxyzQWERTYADFGZXCV]*'?$"
+    hannom: "^q[abcdefghijklmnopqrestuvwxyz]*'?$"
+    kana: "^j[abcdefghijkmnopqrestuwxyz]*'?$"
+    reverse_lookup: "^`[abcdefghijklmnopqrestuvwxyz]*'?$"
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+reverse_lookup:
+  dictionary: luna_pinyin
+  preedit_format:
+    - "xform/([nl])v/$1ü/"
+    - "xform/([nl])ue/$1üe/"
+    - "xform/([jqxy])v/$1u/"
+  prefix: "`"
+  suffix: "'"
+  tips: "〔拼音〕"
+schema:
+  ascii_icon: "icon/ascii.ico"
+  author:
+    - "轀輬 <alfredlouis0x7@gmail.com>"
+  dependencies:
+    - luna_pinyin
+    - kana
+    - oldhangeul
+    - cyrillic
+  description: |
+    「邵東話拼音魔改」，以按鍵qrwj輸入五聲（聽感近似的陰陽去聲45皆用j表示）
+
+  icon: "icon/khai.ico"
+  name: "邵東話測試"
+  schema_id: sautungva_beta
+  version: 0.1
+speller:
+  algebra:
+    - "xform/\\|.+$//"
+    - "derive/П//"
+    - "derive/^dz/tz/"
+    - "derive/^ts/ds/"
+    - "derive/^tc/dc/"
+    - "derive/([ui])ang/$1an/"
+    - "derive/(u)ng/$1n/"
+    - "derive/([aeiouy])m/$1n/"
+    - "xform/1$/q/"
+    - "xform/2$/r/"
+    - "xform/3$/w/"
+    - "xform/[45]$/j/"
+    - "derive/[0qrwj]$//"
+    - "derive/liang/lia/"
+    - "fuzz/^(ts|dz|tc|tsh|tch|[tpk]h)[aeuiyo].+$/$1/"
+    - "fuzz/^([aoeiu]).+$/$1/"
+    - "fuzz/^([abcdefghikmnopstuvxz])[aeuiyo].+$/$1/"
+    - "fuzz/^y[ean].+$/y/"
+    - "fuzz/^l[aeuiyo].+$/l/"
+  alphabet: zyxwvutsrqponmljkihgfedcba
+  delimiter: " '"
+  initials: abcdefghjiklmnopqrstuvwxyz
+switches:
+  - options: [noop, simplification]
+    reset: 1
+    states: ["漢字", "汉字"]
+  - options: [noop, trad_tw]
+    reset: 0
+    states: ["大陸", "臺灣"]
+  - name: ascii_mode
+    reset: 0
+    states: ["中文", "西文"]
+  - name: full_shape
+    reset: 0
+    states: ["半角", "全角"]
+  - name: ascii_punct
+    reset: 0
+    states: ["，。", "，．"]
+trad_hk:
+  opencc_config: t2hk.json
+  option_name: trad_hk
+  show_in_comment: false
+  tags: abc
+  tips: none
+trad_tw:
+  opencc_config: t2tw.json
+  option_name: trad_tw
+  show_in_comment: false
+  tags: abc
+  tips: none
+translator:
+  comment_format:
+    - "xform/sr/ʂ/"
+    - "xform/s([aoeu])/с$1/"
+    - "xform/z([aoeu])/з$1/"
+    - "xform/tsh([aoeu])/ц$1/"
+    - "xform/ng/ŋ̍/"
+    - "xform/ŋ̍([ao])/ŋ$1/"
+    - "xform/([aoeiuy])ŋ̍/$1ŋ/"
+    - "xform/m/m̍/"
+    - "xform/m̍([aoeiu])/m$1/"
+    - "xform/([aoeiuy])n/$1н/"
+    - "xform/([aoeiuy])m̍/$1m/"
+    - "xform/ni/ȵi/"
+    - "xform/n/n̍/"
+    - "xform/([ktpʂ]|ts|tc)h/$1ʰ/"
+    - "xform/([aoeiuy])k/$1k̚/"
+    - "xform/([aoeiuy])t/$1t̚/"
+    - "xform/([aoeiuy])p/$1p̚/"
+    - "xform/eн/ən/"
+    - "xform/([iy])ən/$1en/"
+    - "xform/eu/əɯ/"
+    - "xform/au/aɯ/"
+    - "xform/ei/еi/"
+    - "xform/e/ɛ/"
+    - "xform/c/ɕ/"
+    - "xform/z([iy])/ʑ$1/"
+    - "xform/н/n/"
+    - "xform/е/e/"
+    - "xform/([sz])/$1ɿ/"
+    - "xform/ʂ$/ʂʅ/"
+    - "xform/ɿʰ/ʰɿ/"
+    - "xform/ʅʰ/ʰʅ/"
+    - "xform/h/ɣ/"
+    - "xform/с/s/"
+    - "xform/з/z/"
+    - "xform/ц/tsʰ/"
+    - "xform/0/⁵/"
+    - "xform/1/⁵⁵/"
+    - "xform/2/¹²/"
+    - "xform/3/³²/"
+    - "xform/4/³⁵/"
+    - "xform/5/²⁴/"
+    - "xform/П/普/"
+    - "xform/allin/all in/"
+  dictionary: sautungva
+  preedit_format:
+    - "xform/\\|.+$//"
+    - "xform/sr/ʂ/"
+    - "xform/s([aoeu])/с$1/"
+    - "xform/z([aoeu])/з$1/"
+    - "xform/tsh([aoeu])/ц$1/"
+    - "xform/ng/ŋ̍/"
+    - "xform/ŋ̍([ao])/ŋ$1/"
+    - "xform/([aoeiuy])ŋ̍/$1ŋ/"
+    - "xform/m/m̍/"
+    - "xform/m̍([aoeiu])/m$1/"
+    - "xform/([aoeiuy])n/$1н/"
+    - "xform/([aoeiuy])m̍/$1m/"
+    - "xform/ni/ȵi/"
+    - "xform/n/n̍/"
+    - "xform/([ktpʂ]|ts|tc)h/$1ʰ/"
+    - "xform/([aoeiuy])k/$1k̚/"
+    - "xform/([aoeiuy])t/$1t̚/"
+    - "xform/([aoeiuy])p/$1p̚/"
+    - "xform/eн/ən/"
+    - "xform/([iy])ən/$1en/"
+    - "xform/eu/əɯ/"
+    - "xform/au/aɯ/"
+    - "xform/ei/еi/"
+    - "xform/e/ɛ/"
+    - "xform/c/ɕ/"
+    - "xform/z([iy])/ʑ$1/"
+    - "xform/н/n/"
+    - "xform/е/e/"
+    - "xform/([sz])/$1ɿ/"
+    - "xform/ʂ\\>/ʂʅ/"
+    - "xform/ɿʰ/ʰɿ/"
+    - "xform/ʅʰ/ʰʅ/"
+    - "xform/h/ɣ/"
+    - "xform/с/s/"
+    - "xform/з/z/"
+    - "xform/ц/tsʰ/"
+  prism: sautungva_beta
+  spelling_hints: 10

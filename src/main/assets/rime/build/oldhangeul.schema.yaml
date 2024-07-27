@@ -1,0 +1,232 @@
+__build_info:
+  rime_version: 1.11.2
+  timestamps:
+    default: 1718118792
+    default.custom: 1719623651
+    key_bindings: 1718118792
+    key_bindings.custom: 0
+    oldhangeul.custom: 0
+    oldhangeul.schema: 1685811165
+    punctuation: 1718118792
+    punctuation.custom: 0
+engine:
+  filters:
+    - uniquifier
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - fluency_editor
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - r10n_translator
+    - reverse_lookup_translator
+    - table_translator
+key_binder:
+  bindings:
+    - {accept: "Control+p", send: Up, when: composing}
+    - {accept: "Control+n", send: Down, when: composing}
+    - {accept: "Control+b", send: Left, when: composing}
+    - {accept: "Control+f", send: Right, when: composing}
+    - {accept: "Control+a", send: Home, when: composing}
+    - {accept: "Control+e", send: End, when: composing}
+    - {accept: "Control+d", send: Delete, when: composing}
+    - {accept: "Control+k", send: "Shift+Delete", when: composing}
+    - {accept: "Control+h", send: BackSpace, when: composing}
+    - {accept: "Control+g", send: Escape, when: composing}
+    - {accept: "Control+bracketleft", send: Escape, when: composing}
+    - {accept: "Control+y", send: Page_Up, when: composing}
+    - {accept: "Alt+v", send: Page_Up, when: composing}
+    - {accept: "Control+v", send: Page_Down, when: composing}
+    - {accept: ISO_Left_Tab, send: "Shift+Left", when: composing}
+    - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
+    - {accept: Tab, send: "Shift+Right", when: composing}
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: comma, send: Page_Up, when: paging}
+    - {accept: period, send: Page_Down, when: has_menu}
+    - {accept: "Control+Shift+1", select: .next, when: always}
+    - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
+    - {accept: "Control+Shift+3", toggle: full_shape, when: always}
+    - {accept: "Control+Shift+4", toggle: simplification, when: always}
+    - {accept: "Control+Shift+5", toggle: extended_charset, when: always}
+    - {accept: "Control+Shift+exclam", select: .next, when: always}
+    - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
+    - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
+    - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
+    - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
+  import_preset: default
+menu:
+  alternative_select_labels:
+    - "甲"
+    - "乙"
+    - "丙"
+    - "丁"
+    - "戊"
+    - "己"
+    - "庚"
+    - "辛"
+    - "壬"
+    - "癸"
+  page_size: 6
+punctuator:
+  full_shape:
+    " ": {commit: "　"}
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": ["＃", "⌘"]
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["％", "°", "℃"]
+    "&": "＆"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["＊", "·", "・", "×", "※", "❂"]
+    "+": "＋"
+    ",": {commit: "，"}
+    "-": "－"
+    .: {commit: "。"}
+    "/": ["／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "＝"
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": ["＠", "☯"]
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "｀"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": "～"
+  half_shape:
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": "#"
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["%", "％", "°", "℃"]
+    "&": "&"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["*", "＊", "·", "・", "×", "※", "❂"]
+    "+": "+"
+    ",": {commit: "，"}
+    "-": "-"
+    .: {commit: "。"}
+    "/": ["、", "/", "／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "="
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": "@"
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "\\", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "`"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "|", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": ["~", "～"]
+  import_preset: default
+recognizer:
+  patterns:
+    reverse_lookup: "`[a-z]*$"
+reverse_lookup:
+  dictionary: oldhangeul
+  enable_completion: true
+  prefix: "`"
+  tips: "〔Hangeul〕"
+schema:
+  author:
+    - "Sim Cheon Hyeong <2417647441@qq.com>"
+  name: oldhangeul
+  schema_id: oldhangeul
+  version: 3.0
+speller:
+  alphabet: qwertyasdfgzxcvQWETYADFGXCVuiophjklbnmRZ
+  delimiter: " '"
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [Kor, Eng]
+  - name: full_shape
+    states: [Half, Full]
+translator:
+  comment_format:
+    - "xlit|qwertyasdfgzxcvQWETYADFGXCVuiophjklbnmRZ|АаБбВвГгДдЕеЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУу|"
+    - "xlit|АаБбВвГгДдЕеЖжЗзКкЛлНПпРрСТтУу|bjdgszmnqrhktcpvMNlxfOoeaiuUDT|"
+    - "xform/И/j1/"
+    - "xform/и/j2/"
+    - "xform/Й/s1/"
+    - "xform/й/s2/"
+    - "xform/М/c1/"
+    - "xform/м/c2/"
+    - "xform/н/yo/"
+    - "xform/О/ye/"
+    - "xform/о/ya/"
+    - "xform/с/yu/"
+    - "xform/([js])([12])([js])/$1$3/"
+    - "xform/y([ou])y/yw/"
+    - "xform/([bcdfghjklmnpqrstvxzDMNT12])([ou])([aey])/$1w$3/"
+    - "xform/([ae])([ou])/$1w/"
+    - "xform/ng/nk/"
+    - "xform/M/mv/"
+    - "xform/N/ng/"
+    - "xform/1/¹/"
+    - "xform/2/²/"
+    - "xform/([aeiouwOU])l/$1R/"
+    - "xform/([aeiouwOU])r/$1l/"
+    - "xform/([aeiouwOU])([bcdfghjklmnpqrstvxz])r/$1$2l/"
+    - "xform/R/r/"
+    - "xform/O/ô/"
+    - "xform/U/û/"
+  dictionary: oldhangeul
+  preedit_format:
+    - "xlit|qwertyasdfgzxcvQWETYADFGXCVuiophjklbnmRZ|АаБбВвГгДдЕеЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУу|"
+    - "xlit|АаБбВвГгДдЕеЖжЗзКкЛлНПпРрСТтУу|bjdgszmnqrhktcpvMNlxfOoeaiuUDT|"
+    - "xform/И/j1/"
+    - "xform/и/j2/"
+    - "xform/Й/s1/"
+    - "xform/й/s2/"
+    - "xform/М/c1/"
+    - "xform/м/c2/"
+    - "xform/н/yo/"
+    - "xform/О/ye/"
+    - "xform/о/ya/"
+    - "xform/с/yu/"
+    - "xform/([js])([12])([js])/$1$3/"
+    - "xform/y([ou])y/yw/"
+    - "xform/([bcdfghjklmnpqrstvxzDMNT12])([ou])([aey])/$1w$3/"
+    - "xform/([ae])([ou])/$1w/"
+    - "xform/ng/nk/"
+    - "xform/M/mv/"
+    - "xform/N/ng/"
+    - "xform/1/¹/"
+    - "xform/2/²/"
+    - "xform/([aeiouwOU])l/$1R/"
+    - "xform/([aeiouwOU])r/$1l/"
+    - "xform/([aeiouwOU])([bcdfghjklmnpqrstvxz])r/$1$2l/"
+    - "xform/R/r/"
+    - "xform/O/ô/"
+    - "xform/U/û/"

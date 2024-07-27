@@ -1,0 +1,191 @@
+__build_info:
+  rime_version: 1.9.0
+  timestamps:
+    default: 1694324142
+    default.custom: 1711334145
+    japanese.custom: 0
+    japanese.schema: 1661182758
+    key_bindings: 1682503726
+    key_bindings.custom: 0
+    punctuation: 1682503727
+    punctuation.custom: 0
+engine:
+  filters:
+    - simplifier
+    - uniquifier
+    - "reverse_lookup_filter@putonghua_to_kanji_reverse_lookup"
+    - "reverse_lookup_filter@hannom_reverse_lookup"
+    - "reverse_lookup_filter@hanja_reverse_lookup"
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - "affix_segmentor@putonghua_to_kanji_lookup"
+    - "affix_segmentor@hannom_lookup"
+    - "affix_segmentor@hanja_lookup"
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+    - reverse_lookup_translator
+    - "script_translator@putonghua_to_kanji_lookup"
+    - "script_translator@hannom_lookup"
+    - "script_translator@hanja_lookup"
+key_binder:
+  bindings:
+    - {accept: "Control+Shift+1", select: .next, when: always}
+    - {accept: "Control+Shift+n", select: japanese, when: always}
+    - {accept: "Control+Shift+N", select: japanese, when: always}
+    - {accept: "Control+Shift+k", select: korean, when: always}
+    - {accept: "Control+Shift+K", select: korean, when: always}
+    - {accept: "Control+Shift+v", select: vietnamese, when: always}
+    - {accept: "Control+Shift+V", select: vietnamese, when: always}
+    - {accept: "Control+Shift+j", select: double_jyutping_extra, when: always}
+    - {accept: "Control+Shift+J", select: double_jyutping_extra, when: always}
+    - {accept: "Control+Shift+m", select: td_pinyin_flypy_extra, when: always}
+    - {accept: "Control+Shift+M", select: td_pinyin_flypy_extra, when: always}
+    - {accept: "Control+Shift+l", select: international, when: always}
+    - {accept: "Control+Shift+L", select: international, when: always}
+    - {accept: F16, select: .next, when: always}
+    - {accept: F19, select: international, when: always}
+    - {accept: semicolon, send: m, when: always}
+    - {accept: m, send: semicolon, when: always}
+    - {accept: q, send: a, when: always}
+    - {accept: a, send: q, when: always}
+    - {accept: w, send: z, when: always}
+    - {accept: z, send: w, when: always}
+menu:
+  alternative_select_labels:
+    - "甲"
+    - "乙"
+    - "丙"
+    - "丁"
+    - "戊"
+    - "己"
+    - "庚"
+    - "辛"
+    - "壬"
+    - "癸"
+  page_size: 9
+punctuator:
+  full_shape:
+    " ": {commit: "　"}
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": ["＃", "⌘"]
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["％", "°", "℃"]
+    "&": "＆"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["＊", "·", "・", "×", "※", "❂"]
+    "+": "＋"
+    ",": {commit: "，"}
+    "-": "－"
+    .: {commit: "。"}
+    "/": ["／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "＝"
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": ["＠", "☯"]
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "｀"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": "～"
+  half_shape:
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": "#"
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤"]
+    "%": ["%", "％", "°", "℃"]
+    "&": "&"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["*", "＊", "·", "・", "×", "※", "❂"]
+    "+": "+"
+    ",": {commit: "，"}
+    "-": "-"
+    .: {commit: "。"}
+    "/": ["、", "/", "／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹"]
+    "=": "="
+    ">": ["》", "〉", "»", "›"]
+    "?": {commit: "？"}
+    "@": "@"
+    "[": ["「", "【", "〔", "［"]
+    "\\": ["、", "\\", "＼"]
+    "]": ["」", "】", "〕", "］"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "`"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "|", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": ["~", "～"]
+  import_preset: default
+recognizer:
+  import_preset: default
+  patterns:
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    hanja_lookup: "`K[a-z]*?$"
+    hannom_lookup: "`V[a-z]*?$"
+    putonghua_to_kanji_lookup: "`[a-z;/,.]*`?$"
+    reverse_lookup: "`H[a-z]*`?$"
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+schema:
+  author:
+    - "ensigma96 <ensigma96@gmail.com>"
+  dependencies:
+    - terra_pinyin.extended
+    - stroke
+  name: "日本語"
+  schema_id: japanese
+  version: v0.2
+speller:
+  algebra:
+    - "derive/_/x/"
+    - "derive/-/q/"
+    - "derive/i_e/ye/"
+  alphabet: "zyxwvutsrqponmlkjihgfedcba-_"
+  delimiter: " '"
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: ["中文", "西文"]
+  - name: full_shape
+    states: ["半角", "全角"]
+  - name: simplification
+    states: ["漢字", "汉字"]
+  - name: ascii_punct
+    states: ["。，", "．，"]
+translator:
+  comment_format:
+    - "xlit|q|ー|"
+  dictionary: japanese
+  preedit_format:
+    - "xlit|q|ー|"
+  spelling_hints: 5
